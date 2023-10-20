@@ -1,6 +1,8 @@
 // components/Home.tsx
 
 import { FC } from "react";
+import Navbar from '@/components/layout/Navbar'
+
 import { Button } from "@/components/Button";
 import SocialButtons from "@/components/home/FooterSocials";
 // import SocialFooterButtons from "@/components/home/FooterSocials"
@@ -12,6 +14,8 @@ import "@/app/globals.css";
 
 const Home: FC = () => {
 	return (
+		<>
+			<Navbar/>
 		<section className="bg-big text-center text-white px-4 md:px-10 lg:px-20 py-10 md:pt-24 pb-0 w-full">
 			<div>
         {/* <div className="top-left-planet">
@@ -58,9 +62,10 @@ const Home: FC = () => {
 				</Button>
 			</div>
 			<div className="footer-socials">
-        <SocialButtons />
+        {/* <SocialButtons /> */}
       </div>
 		</section>
+		</>
 	);
 };
 
