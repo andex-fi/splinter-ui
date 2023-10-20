@@ -1,8 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import localFont from '@next/font/local'
-// import Navbar from '@/components/layout/Navbar'
-// import FooterSocials from '@/components/layout/FooterSocials'
 
 const clashDisplay = localFont({
   src: [
@@ -46,9 +44,7 @@ export default function RootLayout({
         </div>
 
         <main className='app'>
-          {/* <Navbar /> */}
           {children}
-          {/* <FooterSocials/> */}
         </main>
         </body>
     </html>
