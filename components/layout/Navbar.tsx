@@ -1,73 +1,87 @@
-"use client";
-import React, { useState } from "react";
-import { AiOutlineMenu } from "react-icons/ai";
-import { RxCross1 } from "react-icons/rx";
-import Link from "next/link";
-import Dropdown from "./DropDown";
-const Navbar = () => {
-  const [navbar, setNavbar] = useState(false);
-  const menu = [
-    { name: "Home", url: "/" },
-    {
-      name: "Services",
-      url: "/",
-      dropdown: [
-        { name: "Service 1", url: "" },
-        { name: "Service 2", url: "" },
-        { name: "Service 3", url: "" },
-      ],
-    },
-    { name: "About", url: "/" },
-    { name: "Contact", url: "/" },
-  ];
+'use client'
+import { FC, useState } from "react";
+import Link from 'next/link';
+import Image from "next/image";
+import { Button } from "@/components/Button";
+import { Bars3CenterLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import Logo from "@/public/assets/splinter-logo.png";
+import Logo2 from "@/public/assets/splinter-logo.png";
+import { navLinks } from "@/utils/NavUtils";
+
+const Navbar: FC = () => {
+  const [open, setOpen] = useState<boolean>(false);
+
+  const handleOpenMenu = (): void => {
+    setOpen(!open);
+  };
+
+  const activeLink = "text-[#fff]  font-bold hover:text-[#fff]";
+  const normalLink = "text-[#A086C0] font-bold hover:text-[#fff]";
+
   return (
-    <nav className="w-full bg-gray-800 shadow">
-      <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-        <div>
-          <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <a href="#" className="">
-              <div className="avatar">
-                <div className="w-16 rounded">
-                  {/* <img src="" /> */}
-                  <h1 className="text-3xl text-white font-bold">NEXT JS </h1>
-                </div>
-              </div>
-            </a>
-            <div className="md:hidden">
-              <button
-                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-                onClick={() => setNavbar(!navbar)}
-              >
-                {navbar ? (
-                  <RxCross1 className="text-white" />
-                ) : (
-                  <AiOutlineMenu className="text-white" />
-                )}
-              </button>
-            </div>
+    <div className="bg-[#240939] text-white flex flex-col gap-8 lg:gap-0 lg:flex-row lg:items-center lg:justify-between px-4 md:px-10 lg:px-20 py-6">
+     <Image
+        src={Logo2}
+        alt="splinter logo"
+        className="hidden md:block md:w-[20%] lg:w-[8%]"
+      /> 
+      <Image
+        src={Logo}
+        alt="splinter logo"
+        className="block md:hidden w-[10%]"
+        width={300} 
+        height={100}
+      />
+
+      {open ? (
+        <div className="block lg:hidden absolute top-20 left-0 w-full bg-[#240939] py-10 z-10">
+          <ul className="flex flex-col items-center gap-10 lg:gap-8">
+            {navLinks.map((navlink, index) => (
+              <Link key={index} href={navlink.link} className={activeLink}>
+                  <li>{navlink.name}</li>
+              </Link>
+            ))}
+          </ul>
+
+          <div className="flex flex-col mt-4 items-center gap-10">
+            <Link href="/">
+            <Button btnStyles="text-white flex items-center justify-center font-bold px-8 py-3 text-sm rounded-lg button-50">
+						Launch Dapp
+					</Button>
+            </Link>
           </div>
         </div>
-        <div>
-          <div
-            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-              navbar ? "block" : "hidden"
-            }`}
-          >
-            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              {menu.map(({ name, url, dropdown }, index) => (
-                <li key={index} className="text-white">
-                  {dropdown ? (
-                    <Dropdown name={name} dropdownItems={dropdown} />
-                  ) : (
-                    <Link href={url}>{name}</Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+      ) : null}
+
+      <ul className="hidden lg:flex items-center gap-4 lg:gap-8">
+        {navLinks.map((navlink, index) => (
+          <Link key={index} href={navlink.link} className={normalLink}>
+              <li>{navlink.name}</li>
+          </Link>
+        ))}
+      </ul>
+
+      <div className="hidden lg:flex items-center gap-4">
+        <Link href="/">
+        <Button btnStyles="text-white flex items-center justify-center font-bold px-8 py-3 text-sm rounded-lg button-50">
+						Launch Dapp
+					</Button>
+        </Link>
       </div>
-    </nav>
+
+      {open ? (
+        <XMarkIcon
+          className="w-8 h-8 block lg:hidden absolute top-6 right-4"
+          onClick={handleOpenMenu}
+        />
+      ) : (
+        <Bars3CenterLeftIcon
+          className="w-8 h-8 block lg:hidden absolute top-6 right-4"
+          onClick={handleOpenMenu}
+        />
+      )}
+    </div>
   );
 };
-export default Navbar;
+
+export default Navbar
