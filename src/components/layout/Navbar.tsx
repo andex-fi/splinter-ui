@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { Link } from "react-router-dom";
-import { Bars3CenterLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Logo from "../../assets/images/splinter-logo.png";
 import Logo2 from "../../assets/images/splinter-logo.png";
 import { navLinks } from "../../utils/NavUtils";
@@ -17,7 +17,7 @@ const Navbar: FC = () => {
   const normalLink = "text-[#A086C0] font-bold hover:text-[#fff]";
 
   return (
-    <div className="bg-[#24093980] text-white flex flex-col gap-8 lg:gap-0 lg:flex-row lg:items-center lg:justify-between px-4 md:px-10 lg:px-20 py-6 absolute w-full border-b-2 border-[#A086C0]">
+    <div className="text-white flex flex-col gap-8 navbar-background lg:gap-0 lg:flex-row lg:items-center lg:justify-between px-4 md:px-10 lg:px-20 py-6 absolute w-full border-b-2 border-[#A086C0]">
       <img
         src={Logo2}
         alt="splinter logo"
@@ -43,7 +43,7 @@ const Navbar: FC = () => {
 
           <div className="flex flex-col mx-9 mt-4 items-start gap-10">
             <Link to="/">
-              <Button btnStyles="text-white flex items-center justify-center font-bold px-8 py-3 text-sm rounded-lg button-50">
+              <Button btnStyles="text-white flex items-center justify-center font-bold px-8 py-3 text-sm rounded-lg launch-Dapp-button">
                 Launch Dapp
               </Button>
             </Link>
@@ -61,7 +61,7 @@ const Navbar: FC = () => {
 
       <div className="hidden lg:flex items-center gap-4">
         <Link to="/">
-          <Button btnStyles="text-white flex items-center justify-center font-bold px-8 py-3 text-sm rounded-lg button-50">
+          <Button btnStyles="text-white flex items-center justify-center font-bold px-8 py-3 text-sm rounded-lg launch-Dapp-button">
             Launch Dapp
           </Button>
         </Link>
@@ -73,7 +73,7 @@ const Navbar: FC = () => {
           onClick={handleOpenMenu}
         />
       ) : (
-        <Bars3CenterLeftIcon
+        <Bars3Icon
           className="w-8 h-8 block lg:hidden absolute top-6 right-4"
           onClick={handleOpenMenu}
         />
