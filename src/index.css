@@ -5,8 +5,8 @@
 @tailwind utilities;
 
 
-/* button */
-.button-50 {
+/* Launch Dapp button */
+.launch-Dapp-button {
   appearance: button;
   background-color: #ffb2fa;
   background-image: none;
@@ -29,20 +29,20 @@
   white-space: nowrap;
 }
 
-.button-50:focus {
+.launch-Dapp-button:focus {
   text-decoration: none;
 }
 
-.button-50:hover {
+.launch-Dapp-button:hover {
   text-decoration: none;
 }
 
-.button-50:active {
+.launch-Dapp-button:active {
   box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
   outline: 0;
 }
 
-.button-50:not([disabled]):active {
+.launch-Dapp-button:not([disabled]):active {
   box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
   transform: translate(2px, 2px);
 }
@@ -114,7 +114,7 @@
 } */
 .bg-big  {
   background-image: url("../src/assets/images/stars-bg-2.png"); 
-  height: 140vh;
+  height: 160vh;
   background-position: center; 
   background-repeat: no-repeat; 
   background-size: cover; 
@@ -132,7 +132,7 @@
 @media (max-width: 768px) {
   .bg-big  {
     background-image: url("../src/assets/images/mobile-bg-2.png"); 
-    height: 170vh;
+    height: 190vh;
     background-position: center; 
     background-repeat: no-repeat;     
     background-size: cover; 
@@ -143,11 +143,16 @@
     width: 5%;
     border-radius: 8px;
   }
+
+  .navbar-background {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .navbar-background {
-  background-image: url('./src/assets/images/Rectangle\ 367.svg');
+  background-image: url('./src/assets/images/nav-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.7;
 }
