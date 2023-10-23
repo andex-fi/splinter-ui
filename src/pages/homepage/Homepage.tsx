@@ -42,7 +42,7 @@ const Home: FC = () => {
 
         <div className="flex items-center gap-4 justify-center mt-8">
           <Link to="/">
-            <Button btnStyles="text-white flex items-center justify-center font-bold px-8 py-3 text-sm rounded-lg button-50">
+            <Button btnStyles="text-white flex items-center justify-center font-bold px-8 py-3 text-sm rounded-lg launch-Dapp-button">
               Launch Dapp
             </Button>
           </Link>
