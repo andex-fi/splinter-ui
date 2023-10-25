@@ -2,7 +2,6 @@ import React, { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Logo from "../../assets/images/splinter-logo.png";
-import Logo2 from "../../assets/images/splinter-logo.png";
 import { navLinks } from "../../utils/NavUtils";
 import { Button } from "../../components/Button";
 
@@ -14,12 +13,12 @@ const Navbar: FC = () => {
   };
 
   const activeLink = "text-[#fff] font-bold hover:text-[#fff]";
-  const normalLink = "text-[#A086C0] font-bold hover:text-[#fff]";
+  const normalLink = "text-[#A086C0] font-bold hover-text-[#fff]";
 
   return (
-    <div className="text-white flex flex-col gap-8 navbar-background lg:gap-0 lg:flex-row lg:items-center lg:justify-between px-4 md:px-10 lg:px-20 py-6 absolute w-full border-b-2 border-[#A086C0]">
+    <div className={`text-white flex flex-col gap-8 lg:gap-0 lg:flex-row lg:items-center lg:justify-between px-4 md:px-10 lg:px-20 py-6 absolute w-full border-b-2 border-[#A086C0] ${open ? "bg-[#09001a]" : ""}`}>
       <img
-        src={Logo2}
+        src={Logo}
         alt="splinter logo"
         className="hidden md:block md:w-[20%] lg:w-[8%]"
       />
@@ -32,7 +31,14 @@ const Navbar: FC = () => {
       />
 
       {open ? (
-        <div className="block lg:hidden absolute top-20 left-0 w-full bg-[#09001a] py-10 z-10">
+        <div style={{ backgroundColor: "#09001a" }} className="block lg:hidden absolute top-23.5 left-0 w-full z-10">
+          <img
+            src={Logo}
+            alt="splinter logo"
+            className="md:hidden w-[15%] mx-9 ml-19 mb-5 flex flex-col items-start gap-10 lg:gap-8"
+            width={300}
+            height={100}
+          />
           <ul className="mx-9 ml-19 flex flex-col items-start gap-10 lg:gap-8">
             {navLinks.map((navlink, index) => (
               <Link key={index} to={navlink.link} className={activeLink}>
@@ -48,6 +54,10 @@ const Navbar: FC = () => {
               </Button>
             </Link>
           </div>
+          <XMarkIcon
+            className="w-6 h-6 block lg:hidden absolute top-6 right-4" // Adjusted size for mobile
+            onClick={handleOpenMenu}
+          />
         </div>
       ) : null}
 
@@ -69,7 +79,7 @@ const Navbar: FC = () => {
 
       {open ? (
         <XMarkIcon
-          className="w-8 h-8 block lg:hidden absolute top-6 right-4"
+          className="w-8 h-8 block lg:hidden absolute top-6 right-4" // Default size for larger screens
           onClick={handleOpenMenu}
         />
       ) : (
