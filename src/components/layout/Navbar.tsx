@@ -25,41 +25,39 @@ const Navbar: FC = () => {
       <img
         src={Logo}
         alt="splinter logo"
-        className="block md:hidden w-[10%]"
+        className="block md:hidden w-[15%]"
         width={300}
         height={100}
       />
 
-      {open ? (
-        <div style={{ backgroundColor: "#09001a" }} className="block lg:hidden absolute top-23.5 left-0 w-full z-10">
-          <img
-            src={Logo}
-            alt="splinter logo"
-            className="md:hidden w-[15%] mx-9 ml-19 mb-5 flex flex-col items-start gap-10 lg:gap-8"
-            width={300}
-            height={100}
-          />
-          <ul className="mx-9 ml-19 flex flex-col items-start gap-10 lg:gap-8">
-            {navLinks.map((navlink, index) => (
-              <Link key={index} to={navlink.link} className={activeLink}>
-                <li>{navlink.name}</li>
-              </Link>
-            ))}
-          </ul>
-
-          <div className="flex flex-col mx-9 mt-4 items-start gap-10">
-            <Link to="/">
-              <Button btnStyles="text-white flex items-center justify-center font-bold px-8 py-3 text-sm rounded-lg launch-Dapp-button">
-                Launch Dapp
-              </Button>
+      <div className={`ease-up ${open ? "active" : ""} block lg:hidden absolute top-23.5 left-0 w-full z-10`} style={{ backgroundColor: "#09001a" }}>
+        <img
+          src={Logo}
+          alt="splinter logo"
+          className="md:hidden w-[15%] mx-9 ml-19 mb-5 flex flex-col items-start gap-10 lg:gap-8"
+          width={300}
+          height={100}
+        />
+        <ul className="mx-9 ml-19 flex flex-col items-start gap-10 lg:gap-8">
+          {navLinks.map((navlink, index) => (
+            <Link key={index} to={navlink.link} className={activeLink}>
+              <li>{navlink.name}</li>
             </Link>
-          </div>
-          <XMarkIcon
-            className="w-6 h-6 block lg:hidden absolute top-6 right-4" // Adjusted size for mobile
-            onClick={handleOpenMenu}
-          />
+          ))}
+        </ul>
+
+        <div className="flex flex-col mx-9 mt-4 items-start gap-10">
+          <Link to="/">
+            <Button btnStyles="text-white flex items-center justify-center font-bold px-8 py-3 text-sm rounded-lg launch-Dapp-button">
+              Launch Dapp
+            </Button>
+          </Link>
         </div>
-      ) : null}
+        <XMarkIcon
+          className="w-6 h-6 block lg:hidden absolute top-6 right-4" // Adjusted size for mobile
+          onClick={handleOpenMenu}
+        />
+      </div>
 
       <ul className="hidden lg:flex items-center gap-4 lg:gap-8">
         {navLinks.map((navlink, index) => (
