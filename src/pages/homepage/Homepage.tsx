@@ -2,7 +2,11 @@ import React, { FC } from "react";
 import { Button } from "../../components/Button";
 import { Link } from 'react-router-dom'; 
 import TopGalaxy from '../../assets/images/top-galaxy.png';
-import TopLeftPlanet from '../../assets/images/assets/top-left-planet.png';
+import TopLeftPlanet from '../../assets/images/right-blue-planet.png';
+import LeftPlanet from '../../assets/images/left-pink-planet.png';
+import BottomPlanet from '../../assets/images/bottom-planet.png';
+
+
 import SocialButtons from "../../components/SocialButtons";
 
 
@@ -10,12 +14,13 @@ const Home: FC = () => {
   return (
     <>
       <section className="bg-big text-center text-white px-4 md:px-10 lg:px-20 py-10 md:pt-24 pb-0 w-full">
+     
         <div>
           {/* <div className="top-left-planet">
             <img src={TopLeftPlanet} alt="pink planet" />
           </div> */}
-
-          <div className="galaxy">
+          
+          <div className="galaxy sm:mt-7">
             <img src={TopGalaxy} alt="Galaxy" height={100} width={100} />
           </div>
           <h1 className="text-3xl lg:text-7xl font-extrabold mb-2">
@@ -38,6 +43,21 @@ const Home: FC = () => {
           <p className="mb-1 text-md font-bold opacity-80">
             trading experiences that combine speed, security, and innovation
           </p>
+
+          <div className="absolute w-24 h-24 top-35 right-0">
+            <img
+              src={TopLeftPlanet}
+              alt="Image"
+            />
+          </div>
+            
+          <div className="absolute w-24 h-24 top-35 left-0">
+            <img
+              src={LeftPlanet}
+              alt="Image"
+            />
+          </div>
+
         </div>
 
         <div className="flex items-center gap-4 justify-center mt-8">
@@ -53,9 +73,18 @@ const Home: FC = () => {
             Learn more
           </Button>
         </div>
-        <div className="flex space-x-4">
-        <SocialButtons />
 
+        <div className="mt-14">
+          <div className="absolute w-24 h-24 top-25 right-70 botton-planet-position">
+              <img
+                src={BottomPlanet}
+                alt="Image"
+              />
+            </div>
+        </div>
+
+        <div>
+        <SocialButtons />
         </div>
       </section>
     </>
