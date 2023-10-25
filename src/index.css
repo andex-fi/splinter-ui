@@ -156,3 +156,21 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.botton-planet-position {
+  transform: translateX(60%) 
+}
+
+/* dropdown animation */
+.ease-up {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.ease-up.active {
+  max-height: 500px; /* Adjust the value as needed to fit your content */
+  opacity: 1;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
