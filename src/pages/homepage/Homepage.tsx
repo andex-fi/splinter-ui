@@ -16,7 +16,7 @@ const Home: FC = () => {
           {/* <div className="galaxy">
             <img src={TopGalaxy} alt="Galaxy" height={100} width={100} />
           </div> */}
-          <h1 className="text-3xl lg:text-7xl font-extrabold mb-2 hero">
+          <h1 className="text-3xl lg:text-7xl font-extrabold mb-2 hero-spacing">
             First Perpetual Decentralized <br />
             Exchange on Flare
           </h1>

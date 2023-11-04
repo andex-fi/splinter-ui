@@ -114,7 +114,7 @@
 } */
 .bg-big  {
   background-image: url("../src/assets/images/bg-grouped1.png"); 
-  height: 160vh;
+  height: 170vh;
   background-position: center; 
   background-repeat: no-repeat; 
   background-size: cover; 
@@ -138,8 +138,8 @@
     background-size: cover; 
   }
 
-  .hero {
-    margin-top: 36px;
+  .hero-spacing {
+    margin-top: 42px;
   }
   .galaxy img {
     height: 20%;
