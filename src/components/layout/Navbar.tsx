@@ -25,16 +25,16 @@ const Navbar: FC = () => {
       <img
         src={Logo}
         alt="splinter logo"
-        className="block md:hidden w-[10%]"
+        className="block md:hidden w-[10%] logo"
         width={300}
         height={100}
       />
 
-      <div className={`ease-up ${open ? "active" : ""} block lg:hidden absolute top-23.5 left-0 w-full z-10`} style={{ backgroundColor: "#09001a" }}>
+      <div className={`ease-up ${open ? "active" : ""} block lg:hidden absolute drop-down left-0 w-full z-10`} style={{ backgroundColor: "#09001a" }}>
         <img
           src={Logo}
           alt="splinter logo"
-          className="md:hidden w-[15%] mx-9 ml-19 mb-5 flex flex-col items-start gap-10 lg:gap-8"
+          className="md:hidden w-[15%] mx-9 ml-19 mb-5 flex flex-col items-start gap-10 lg:gap-8 logo"
           width={300}
           height={100}
         />
@@ -48,7 +48,7 @@ const Navbar: FC = () => {
 
         <div className="flex flex-col mx-9 mt-4 items-start gap-10">
           <Link to="/">
-            <Button btnStyles="text-white flex items-center justify-center font-bold px-8 py-3 text-sm rounded-lg launch-Dapp-button">
+            <Button btnStyles="mb-5 text-white flex items-center justify-center font-bold px-8 py-3 text-sm rounded-lg launch-Dapp-button">
               Launch Dapp
             </Button>
           </Link>
