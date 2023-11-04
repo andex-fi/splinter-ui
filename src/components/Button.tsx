@@ -1,4 +1,4 @@
-import React, { FC, useRef } from 'react';
+import React, { FC } from 'react';
 
 export interface AnchorButtonProps extends Omit<React.AnchorHTMLAttributes<any>, 'onClick'> {
   href: string;
@@ -24,8 +24,7 @@ interface Props extends Partial<NativeButtonProps> {
   submit?: boolean;
 }
 
-export const Button: FC<Props> = ({ btnStyles, onClick, link, href, ref, children, submit }) => {
-  const buttonRef = (ref as any) || useRef<HTMLElement | null>(null);
+export const Button: FC<Props> = ({ btnStyles, onClick, link, href, children, submit }) => {
 
   return link ? (
     <a className={btnStyles} href={link}>
