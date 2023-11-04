@@ -16,7 +16,7 @@ const Navbar: FC = () => {
   const normalLink = "text-[#A086C0] font-bold hover-text-[#fff]";
 
   return (
-    <div className={`text-white flex flex-col gap-8 lg:gap-0 lg:flex-row lg:items-center lg:justify-between px-4 md:px-10 lg:px-20 py-6 absolute w-full border-b-2 border-[#A086C0] ${open ? "bg-[#09001a]" : ""}`}>
+    <div className={`navbar-background text-white flex flex-col gap-8 lg:gap-0 lg:flex-row lg:items-center lg:justify-between px-4 md:px-10 lg:px-20 py-6 absolute w-full border-b-2 border-[#A086C0] ${open ? "bg-[#09001a]" : "navbar-background"}`}>
       <img
         src={Logo}
         alt="splinter logo"
@@ -25,7 +25,7 @@ const Navbar: FC = () => {
       <img
         src={Logo}
         alt="splinter logo"
-        className="block md:hidden w-[15%]"
+        className="block md:hidden w-[10%]"
         width={300}
         height={100}
       />
