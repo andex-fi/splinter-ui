@@ -151,6 +151,14 @@
     background-image: none;
 }
 
+.launch-Dapp-button {
+  padding: 8px 30px; 
+}
+
+
+  .learn-more-btn {
+    padding: 8px 30px; 
+  }
 }
 
 .navbar-background {
