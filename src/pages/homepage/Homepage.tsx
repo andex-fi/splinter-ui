@@ -12,7 +12,7 @@ const Home: FC = () => {
   return (
     <>
       <section className="bg-big text-center text-white px-4 md:px-10 lg:px-20 py-10 md:pt-24 pb-0 w-full">
-        <div className="sm:mt-7">
+        <div className="sm:mt-7 md:mt-7">
           {/* <div className="galaxy">
             <img src={TopGalaxy} alt="Galaxy" height={100} width={100} />
           </div> */}

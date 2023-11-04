@@ -47,12 +47,6 @@
   transform: translate(2px, 2px);
 }
 
-@media (min-width: 768px) {
-  .button-50 {
-    padding: 12px 50px;
-  }
-}
-
 /* learn more button */
 .learn-more-btn {
   appearance: button;
@@ -98,6 +92,13 @@
 @media (min-width: 768px) {
   .learn-more-btn {
     padding: 12px 50px;
+  }
+  .drop-down {
+    top: 0px;
+  }
+
+  .logo {
+    width: 30%;
   }
 }
 

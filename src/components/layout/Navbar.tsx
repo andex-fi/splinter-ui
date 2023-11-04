@@ -31,7 +31,7 @@ const Navbar: FC = () => {
       />
 
       <div className={`ease-up ${open ? "active" : ""} block lg:hidden absolute drop-down left-0 w-full z-10`} style={{ backgroundColor: "#09001a" }}>
-        <div className="mt-6">
+        <div className="mt-5 md:mt-5"></div>
         <img
           src={Logo}
           alt="splinter logo"
@@ -49,13 +49,13 @@ const Navbar: FC = () => {
 
         <div className="flex flex-col mx-9 mt-4 items-start gap-10">
           <Link to="/">
-            <Button btnStyles="mb-5 text-white flex items-center justify-center font-bold px-8 py-3 text-sm rounded-lg launch-Dapp-button">
+            <Button btnStyles="mt-5 text-white flex items-center justify-center font-bold px-8 py-3 text-sm rounded-lg launch-Dapp-button">
               Launch Dapp
             </Button>
           </Link>
         </div>
         <XMarkIcon
-          className="w-6 h-6 block lg:hidden absolute top-6 right-4" // Adjusted size for mobile
+          className="w-6 h-6 block lg:hidden absolute top-6 right-4" 
           onClick={handleOpenMenu}
         />
       </div>
@@ -74,7 +74,6 @@ const Navbar: FC = () => {
             Launch Dapp
           </Button>
         </Link>
-      </div>
       </div>
 
       {open ? (
