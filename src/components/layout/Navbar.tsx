@@ -31,6 +31,7 @@ const Navbar: FC = () => {
       />
 
       <div className={`ease-up ${open ? "active" : ""} block lg:hidden absolute drop-down left-0 w-full z-10`} style={{ backgroundColor: "#09001a" }}>
+        <div className="mt-6">
         <img
           src={Logo}
           alt="splinter logo"
@@ -73,6 +74,7 @@ const Navbar: FC = () => {
             Launch Dapp
           </Button>
         </Link>
+      </div>
       </div>
 
       {open ? (
