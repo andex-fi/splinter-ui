@@ -159,6 +159,14 @@
   .learn-more-btn {
     padding: 8px 30px; 
   }
+
+  .logo {
+    width: 30%;
+  }
+
+  .drop-down {
+    top: 0px;
+  }
 }
 
 .navbar-background {
