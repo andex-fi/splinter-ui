@@ -113,7 +113,7 @@
         position: relative;
 } */
 .bg-big  {
-  background-image: url("../src/assets/images/stars-bg-2.png"); 
+  background-image: url("../src/assets/images/bg-grouped1.png"); 
   height: 160vh;
   background-position: center; 
   background-repeat: no-repeat; 
@@ -129,15 +129,18 @@
   width: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 414px) {
   .bg-big  {
-    background-image: url("../src/assets/images/mobile-bg-2.png"); 
+    background-image: url("../src/assets/images/bg-mobile-grouped1.png"); 
     height: 190vh;
     background-position: center; 
     background-repeat: no-repeat;     
     background-size: cover; 
   }
 
+  .hero {
+    margin-top: 36px;
+  }
   .galaxy img {
     height: 20%;
     width: 5%;
@@ -148,8 +151,10 @@
     background-image: none;
     background-repeat: no-repeat;
     background-size: cover;
-  }
 }
+
+}
+
 
 .navbar-background {
   background-image: url('./src/assets/images/nav-bg.png');
