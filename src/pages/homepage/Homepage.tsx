@@ -1,29 +1,22 @@
 import React, { FC } from "react";
 import { Button } from "../../components/Button";
-import { Link } from 'react-router-dom'; 
-import TopGalaxy from '../../assets/images/top-galaxy.png';
-import TopLeftPlanet from '../../assets/images/right-blue-planet.png';
-import LeftPlanet from '../../assets/images/left-pink-planet.png';
-import BottomPlanet from '../../assets/images/bottom-planet.png';
-
+import { Link } from "react-router-dom";
+// import TopGalaxy from "../../assets/images/top-galaxy.png";
+// import TopLeftPlanet from "../../assets/images/right-blue-planet.png";
+// import LeftPlanet from "../../assets/images/left-pink-planet.png";
+// import BottomPlanet from "../../assets/images/bottom-planet.png";
 
 import SocialButtons from "../../components/SocialButtons";
-
 
 const Home: FC = () => {
   return (
     <>
       <section className="bg-big text-center text-white px-4 md:px-10 lg:px-20 py-10 md:pt-24 pb-0 w-full">
-     
-        <div>
-          {/* <div className="top-left-planet">
-            <img src={TopLeftPlanet} alt="pink planet" />
-          </div> */}
-          
-          <div className="galaxy sm:mt-7">
+        <div className="sm:mt-7">
+          {/* <div className="galaxy">
             <img src={TopGalaxy} alt="Galaxy" height={100} width={100} />
-          </div>
-          <h1 className="text-3xl lg:text-7xl font-extrabold mb-2">
+          </div> */}
+          <h1 className="text-3xl lg:text-7xl font-extrabold mb-2 hero">
             First Perpetual Decentralized <br />
             Exchange on Flare
           </h1>
@@ -44,20 +37,13 @@ const Home: FC = () => {
             trading experiences that combine speed, security, and innovation
           </p>
 
-          <div className="absolute w-24 h-24 top-35 right-0">
-            <img
-              src={TopLeftPlanet}
-              alt="Image"
-            />
-          </div>
-            
-          <div className="absolute w-24 h-24 top-35 left-0">
-            <img
-              src={LeftPlanet}
-              alt="Image"
-            />
+          {/* <div className="absolute w-24 h-24 top-35 right-0">
+            <img src={TopLeftPlanet} alt="TopLeftPlanet" />
           </div>
 
+          <div className="absolute w-24 h-24 top-35 left-0 ">
+            <img src={LeftPlanet} alt="LeftPlanet" />
+          </div> */}
         </div>
 
         <div className="flex items-center gap-4 justify-center mt-8">
@@ -74,17 +60,12 @@ const Home: FC = () => {
           </Button>
         </div>
 
-        <div className="mt-14">
-          <div className="absolute w-24 h-24 top-25 right-70 botton-planet-position">
-              <img
-                src={BottomPlanet}
-                alt="Image"
-              />
-            </div>
-        </div>
+        {/* <div className="mt-14 absolute w-24 h-24 top-25 right-40 ">
+            <img src={BottomPlanet} alt="BottomPlanet" />
+        </div> */}
 
-        <div>
-        <SocialButtons />
+        <div className="sm:mt-16">
+          <SocialButtons />
         </div>
       </section>
     </>
