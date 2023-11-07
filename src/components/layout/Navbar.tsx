@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom"; // Import NavLink
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Logo from "../../assets/images/splinter-logo.png";
 import { navLinks } from "../../utils/NavUtils";
@@ -13,7 +13,7 @@ const Navbar: FC = () => {
   };
 
   const activeLink = "text-[#fff] font-bold hover:text-[#fff]";
-  const normalLink = "text-[#A086C0] font-bold hover-text-[#fff]";
+  const normalLink = "text-[#444249] font-bold hover:text-[#fff]";
 
   return (
     <div className={`navbar-background text-white flex flex-col gap-8 lg:gap-0 lg:flex-row lg:items-center lg:justify-between px-4 md:px-10 lg:px-20 py-6 absolute w-full border-b-2 border-[#A086C0] ${open ? "bg-[#09001a]" : "navbar-background"}`}>
@@ -41,18 +41,22 @@ const Navbar: FC = () => {
         />
         <ul className="mx-9 ml-19 flex flex-col items-start gap-10 lg:gap-8">
           {navLinks.map((navlink, index) => (
-            <Link key={index} to={navlink.link} className={activeLink}>
+            <NavLink
+              key={index}
+              to={navlink.link}
+              className='active'
+            >
               <li>{navlink.name}</li>
-            </Link>
+            </NavLink>
           ))}
         </ul>
 
         <div className="flex flex-col mx-9 mt-4 items-start gap-10">
-          <Link to="/">
+          <NavLink to="/">
             <Button btnStyles="mt-5 text-white flex items-center justify-center font-bold px-8 py-3 text-sm rounded-lg launch-Dapp-button">
               Launch Dapp
             </Button>
-          </Link>
+          </NavLink>
         </div>
         <XMarkIcon
           className="w-6 h-6 block lg:hidden absolute top-6 right-4" 
@@ -62,23 +66,27 @@ const Navbar: FC = () => {
 
       <ul className="hidden lg:flex items-center gap-4 lg:gap-8">
         {navLinks.map((navlink, index) => (
-          <Link key={index} to={navlink.link} className={normalLink}>
+          <NavLink
+            key={index}
+            to={navlink.link}
+            className={normalLink}
+          >
             <li>{navlink.name}</li>
-          </Link>
+          </NavLink>
         ))}
       </ul>
 
       <div className="hidden lg:flex items-center gap-4">
-        <Link to="/">
+        <NavLink to="/">
           <Button btnStyles="text-white flex items-center justify-center font-bold px-8 py-3 text-sm rounded-lg launch-Dapp-button">
             Launch Dapp
           </Button>
-        </Link>
+        </NavLink>
       </div>
 
       {open ? (
         <XMarkIcon
-          className="w-8 h-8 block lg:hidden absolute top-6 right-4" // Default size for larger screens
+          className="w-8 h-8 block lg:hidden absolute top-6 right-4" 
           onClick={handleOpenMenu}
         />
       ) : (
