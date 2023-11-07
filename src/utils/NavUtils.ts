@@ -5,6 +5,6 @@ interface navLink {
 
 export const navLinks: navLink[] = [
     {name: "Home", link: "/"},
-    {name: "FAQs", link: "/"},
-    {name: "Docs", link: "/"},
+    {name: "Community", link: "/Community"},
+    {name: "Whitepaper", link: "/whitepaper"},
 ]
