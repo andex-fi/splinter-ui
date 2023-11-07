@@ -12,7 +12,6 @@ const Navbar: FC = () => {
     setOpen(!open);
   };
 
-  const activeLink = "text-[#fff] font-bold hover:text-[#fff]";
   const normalLink = "text-[#444249] font-bold hover:text-[#fff]";
 
   return (
