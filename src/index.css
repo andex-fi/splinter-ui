@@ -166,6 +166,7 @@ display:none;
   .blue-planet {
     right: -10%;
     top: 40%;
+    overflow-x: hidden;
   }
 
   .Left-Planet img{
