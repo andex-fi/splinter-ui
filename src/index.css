@@ -145,16 +145,13 @@ display:none;
 }}
 
 @media (max-width: 600px) {
-  * {
-    max-height: 150vh;
-  }
   body {
     overflow-x: hidden;
   }
 
   .bg-big  {
-    background-image: url("../src/assets/images/mobile-bg-2.png"); 
-    height: 190vh;
+    background-image: url("../src/assets/images/bg-mobile2.png"); 
+    height: 143vh;
     width: auto;
     background-position: center; 
     background-repeat: no-repeat;     
