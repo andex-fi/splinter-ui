@@ -98,8 +98,8 @@ body {
 }
 
 .bg-big  {
-  background-image: url("../src/assets/images/bg-desktop.png"); 
-  height: 170vh;
+  background-image: url("../src/assets/images/bg-desktop2.png"); 
+  height: 160vh;
   width: 100%;
   background-position: center; 
   background-repeat: no-repeat; 
